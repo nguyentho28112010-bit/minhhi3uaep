@@ -1,1 +1,299 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>minhhieuaep</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root {
+    --main-color: rgba(20, 80, 60, 0.85);
+    --btn-color: rgb(252, 171, 255);
+    --border-color: rgba(255, 124, 255, 0.845);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background:
+        radial-gradient(circle at top, rgba(80, 120, 160, 0.25), transparent 60%),
+        linear-gradient(to bottom, #0b132b, #1c2541, #3a506b);
+    color: white;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 420px;
+    margin: auto;
+    padding: 28px 16px 40px;
+    text-align: center;
+}
+
+/* AVATAR */
+.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--border-color);
+    box-shadow: 0 0 30px rgba(0,0,0,0.6);
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+h1 {
+    margin: 14px 0 4px;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+/* BIO */
+.bio {
+    font-size: 14px;
+    opacity: 0.9;
+    margin-bottom: 24px;
+    line-height: 1.6;
+}
+
+/* LINKS */
+.link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 18px;
+    margin-bottom: 16px;
+    border-radius: 16px;
+    background: var(--btn-color);
+    border: 2px solid var(--border-color);
+    color: white;
+    text-decoration: none;
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+    transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.link:hover {
+    transform: scale(1.04);
+    background: rgba(0,0,0,0.75);
+}
+
+.link:active {
+    transform: scale(0.97);
+}
+
+/* RIPPLE EFFECT */
+.link::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    background: rgba(251, 138, 255, 0.799);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    opacity: 0;
+}
+
+.link:active::after {
+    width: 220%;
+    height: 220%;
+    opacity: 0;
+    transition: width 0.4s ease, height 0.4s ease, opacity 0.6s;
+}
+
+.link img {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    object-fit: cover;
+    background: white;
+}
+
+.link span {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* FOOTER */
+footer {
+    margin-top: 30px;
+    font-size: 12px;
+    opacity: 0.6;
+}
+
+/* ===== THÊM: GIAO DIỆN SANG HƠN (KHÔNG XÓA CODE CŨ) ===== */
+.link {
+    background: linear-gradient(
+        135deg,
+        rgba(255,255,255,0.25),
+        rgba(255,255,255,0.1)
+    );
+    backdrop-filter: blur(14px);
+}
+
+.link:hover {
+    box-shadow: 0 0 25px rgba(252,171,255,0.45);
+}
+
+.link::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.35),
+        transparent
+    );
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.link:hover::before {
+    opacity: 1;
+}
+
+h1 {
+    text-shadow: 0 0 10px rgba(252,171,255,0.6);
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<img src="https://i.pinimg.com/736x/7a/af/0d/7aaf0d53b5fb362a36924c99196cbedc.jpg" class="avatar">
+
+<h1>Minh Hiếu</h1>
+
+<div class="bio">
+  <p>Các phần mềm của Adobe bên dưới</p>
+  <p>Mọi người cần hỗ trợ cài plugin thì ib cho tui nha</p>
+  <p>Lưu ý: Máy phải 8GB RAM trở lên mới chạy mượt được ạ</p>
+</div>
+
+<!-- GIỮ NGUYÊN TẤT CẢ LINK -->
+<a class="link" href="https://drive.google.com/drive/folders/1iIW8uchgSVOomEhqUfareYfWvG_G-8O9?usp=drive_link" target="_blank">
+<img src="https://i.pinimg.com/736x/db/ef/a4/dbefa4caff3c912ea75c59721ed70021.jpg"><span>After Effects 2024</span>
+</a>
+
+<a class="link" href="https://drive.google.com/drive/folders/1KWVIT6z1WHp_ffrEm8JfqmmX94XoT5xB?usp=drive_link" target="_blank">
+<img src="https://i.pinimg.com/1200x/ef/0e/46/ef0e46f569309ce7b740f63f5cf40fd4.jpg"><span>Adobe Premiere 2021</span>
+</a>
+
+<a class="link" href="https://drive.google.com/drive/folders/1iTGjDF4pya1GHpBacF-_4z-ZgOJoNULn?usp=drive_link" target="_blank">
+<img src="https://i.pinimg.com/736x/c1/c5/6c/c1c56cd7b60af07ed08993d0ec1c98b1.jpg"><span>Adobe Lightroom</span>
+</a>
+
+<a class="link" href="https://drive.google.com/drive/folders/1WBsZs4pppW9FvTJa3IthyY00oUukOlRF?usp=drive_link" target="_blank">
+<img src="https://i.pinimg.com/736x/78/27/27/782727756a3070449d15c4370d6fc735.jpg"><span>Adobe Photoshop</span>
+</a>
+
+<a class="link" href="https://www.facebook.com/mhi3uaep" target="_blank">
+<img src="https://i.pinimg.com/736x/46/83/99/46839974515f6ca59a6023ef5e061d3e.jpg"><span>Facebook</span>
+</a>
+
+<a class="link" href="https://drive.google.com/drive/folders/1TkEHfTdNkQkP2dVqosB5bNTERyycl8rE?usp=drive_link" target="_blank">
+<img src="https://i.pinimg.com/736x/1e/21/87/1e2187c2fb1a57e53ce393cbb983d595.jpg"><span>Plugin</span>
+</a>
+
+<a class="link" href="https://zalo.me/0337932805" target="_blank">
+<img src="https://i.pinimg.com/736x/1c/e6/41/1ce64129a8c06a58fb2bbc79e70d5e0d.jpg"><span>Zalo Render</span>
+</a>
+
+<footer>Minh Hiếu</footer>
+</div>
+
+<canvas id="snow"></canvas>
+
+<script>
+/* ===== GIỮ NGUYÊN TUYẾT ===== */
+const canvas = document.getElementById("snow");
+const ctx = canvas.getContext("2d");
+
+canvas.style.position = "fixed";
+canvas.style.top = 0;
+canvas.style.left = 0;
+canvas.style.pointerEvents = "none";
+canvas.style.zIndex = 9999;
+
+let w, h;
+function resize() {
+    w = canvas.width = window.innerWidth;
+    h = canvas.height = window.innerHeight;
+}
+window.addEventListener("resize", resize);
+resize();
+
+const snowflakes = [];
+const maxSnow = window.innerWidth < 500 ? 60 : 120;
+
+class Snowflake {
+    constructor() { this.reset(); }
+    reset() {
+        this.x = Math.random() * w;
+        this.y = Math.random() * h;
+        this.r = Math.random() * 3 + 1;
+        this.speed = Math.random() * 1 + 0.5;
+        this.wind = Math.random() * 0.5 - 0.25;
+        this.o = Math.random();
+    }
+    update() {
+        this.y += this.speed;
+        this.x += this.wind;
+        if (this.y > h) {
+            this.reset();
+            this.y = -10;
+        }
+    }
+    draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255,255,255,${this.o})`;
+        ctx.fill();
+    }
+}
+
+for (let i = 0; i < maxSnow; i++) snowflakes.push(new Snowflake());
+
+function animate() {
+    ctx.clearRect(0, 0, w, h);
+    snowflakes.forEach(f => { f.update(); f.draw(); });
+    requestAnimationFrame(animate);
+}
+animate();
+
+/* ===== THÊM: CLICK ĐỔI AVATAR + BIO ===== */
+const avatar = document.querySelector(".avatar");
+const bioBox = document.querySelector(".bio");
+
+document.querySelectorAll(".link").forEach(link => {
+    link.addEventListener("click", () => {
+        const img = link.querySelector("img");
+        const text = link.querySelector("span");
+        if (img) avatar.src = img.src;
+        if (text) {
+            bioBox.innerHTML = `
+              <p>Đang truy cập:</p>
+              <p><b>${text.innerText}</b></p>
+            `;
+        }
+    });
+});
+</script>
+
+</body>
+</html>
 
